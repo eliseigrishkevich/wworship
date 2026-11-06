@@ -1,0 +1,48 @@
+/* Mobile controls and stage readability. Theme colors remain user-selectable. */
+html{scrollbar-gutter:stable}
+main,.row,.sp{min-width:0}
+input,textarea,select{font-size:max(16px,1em)}
+select{appearance:none;-webkit-appearance:none;padding-right:40px!important;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%)!important;background-position:calc(100% - 21px) 50%,calc(100% - 16px) 50%!important;background-size:5px 5px,5px 5px!important;background-repeat:no-repeat!important;line-height:1.5}
+select:disabled{opacity:.6}
+.ttsel,.stsel{min-height:48px;font-size:16px}
+.b,.b.s,.seg button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.b:disabled{opacity:.45;cursor:default;transform:none;pointer-events:none}
+.song-modes button,.stwrap>.seg button{font-size:16px;min-height:48px}
+.stage-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}
+.stage-top{flex-wrap:wrap;gap:8px}
+.stage-top .stsel{flex-basis:50%;width:auto;max-width:100%}
+.stwrap{touch-action:pan-y pinch-zoom;overflow:visible}
+.stage-mode main{max-width:900px}
+.stage-mode .stg{background:var(--stg);border:1px solid var(--line);box-shadow:none;padding:20px 16px;border-radius:18px;overflow:visible}
+.stg pre.song,pre.song{overflow-wrap:anywhere;tab-size:4}
+.stage-mode .stg pre.song{font-size:max(18px,var(--sfs));line-height:max(1.65,var(--slh));color:var(--stgtx)}
+.stage-mode .stg .ch{color:var(--chord)}
+.stage-paging .b{min-height:48px}
+.prayer-note{display:flex;flex-direction:column;gap:3px;padding:14px 0;margin-top:10px;border-top:1px solid var(--line);overflow-wrap:anywhere}
+.command-list{display:grid;gap:10px;margin:12px 0 18px}
+.command-list .b{width:100%;justify-content:flex-start;text-align:left;overflow-wrap:anywhere;white-space:normal}
+.command-check{display:flex;gap:10px;align-items:center;margin:10px 0 18px}
+.command-check input{width:22px;height:22px;margin:0;flex-shrink:0}
+.command-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));background:rgba(0,0,0,.7)}
+.command-overlay section{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:24px;padding:24px;width:100%;max-width:520px;max-height:85dvh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.command-overlay h2{font:700 20px/1.3 var(--fb);text-shadow:none;margin:12px 0}
+.command-overlay p{font:700 clamp(24px,6vw,34px)/1.35 var(--fb);overflow-wrap:anywhere;margin:20px 0 28px}
+.command-overlay .b{width:100%;min-height:52px}
+.command-overlay .mut{font-size:14px}
+.push-settings{display:grid;gap:12px}.push-settings .mut{font-size:14px}
+@media(max-width:430px){
+ main{padding:16px 12px 24px}
+ .stage-mode .stg{padding:18px 12px}
+ .stage-top>.b{padding:8px 10px}
+ .stage-top .stsel{order:3;flex:1 1 100%;width:100%}
+ .stage-top .sp{flex:1}
+ .card>.row{flex-wrap:wrap}
+ .card>.row>.sp{flex-basis:45%}
+ header{flex-wrap:wrap;gap:6px}
+ header .b{padding:6px 9px}
+ .stwrap>.row{flex-wrap:wrap}
+ .stwrap>.row>select{flex:1 1 65%}
+ .seg button{font-size:14px}
+ .prayer-note{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.stwrap,.stwrap.sa{animation:none!important;transition:none!important}}

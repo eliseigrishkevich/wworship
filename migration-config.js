@@ -1,0 +1,1 @@
+window.WMigrationConfig=Object.freeze({"enabled": true, "oldOrigin": "https://wworship.netlify.app", "oldOrigins": ["https://wworship.pages.dev"], "newOrigin": "https://eliseigrishkevich.github.io/wworship/"});
